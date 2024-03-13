@@ -1,0 +1,39 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<div class="masthead-subheading">Sumergite en el mundo de la lectura</div>
+<div class="masthead-heading text-uppercase">Libros</div>
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>Explora nuestros libros</h2>
+
+    
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Genero</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in cursos  %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.autor}}</td>
+            <td>{{ c.editorial }}</td>
+            <td>{{ c.genero }}</td>
+            <td>{{ c.precio }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock contenido %}
+
