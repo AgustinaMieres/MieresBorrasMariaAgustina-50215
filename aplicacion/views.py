@@ -13,13 +13,17 @@ def libros(request):
     return render(request, "aplicacion/libros.html", contexto)
 
 def libreria(request):
-    return render(request, "aplicacion/libreria.html")
+    contexto={'libreria':Libreria.objects.all()}
+    return render(request, "aplicacion/libreria.html", contexto)
+
 
 def bestSeller(request):
-    return render(request, "aplicacion/bestSeller.html")
+    contexto={'bestSeller':BestSeller.objects.all()}
+    return render(request, "aplicacion/bestSeller.html", contexto)
 
 def sucursales(request):
-    return render(request, "aplicacion/sucursales.html")
+    contexto={'sucursales':Sucursal.objects.all()}
+    return render(request, "aplicacion/sucursales.html", contexto)
 
 
 def librosForm(request):
@@ -43,4 +47,25 @@ def librosForm(request):
         miForm = LibrosForm()
 
     return render(request, "aplicacion/librosForm.html", {"form": miForm} )
+
+
+def libreriaForm(request):
+    
+    if request.method == "POST":
+        miForm = LibreriaForm(request.POST)
+        if miForm.is_valid():
+            libreria_articulo = miForm.cleaned_data.get("articulo")
+            libreria_precio = miForm.cleaned_data.get("precio")
+            
+            libreria = Libreria(articulo=libreria_articulo, precio=libreria_precio)
+            libreria.save()
+
+            contexto = {'libreria': Libreria.objects.all()}
+            return render(request, "aplicacion/libreria.html", contexto) 
+
+    else:
+    
+        miForm = LibreriaForm()
+
+    return render(request, "aplicacion/libreriaForm.html", {"form": miForm} )
 

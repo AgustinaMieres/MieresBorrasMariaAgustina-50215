@@ -7,4 +7,26 @@
 
 {% block contenido %}
 <h2>Conoce nuestras sucursales</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Direccion</th>
+            <th>Contacto</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in sucursales  %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.direccion }}</td>
+            <td>{{ c.contacto}}</td>
+            
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 {% endblock contenido %}

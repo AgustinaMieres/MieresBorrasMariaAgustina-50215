@@ -7,4 +7,27 @@
 
 {% block contenido %}
 <h2>Explora nuestros articulos de libreria</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th> 
+            <th>Articulo</th>
+            <th>Precio</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in libreria  %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.articulo }}</td>
+            <td>{{ c.precio}}</td>
+            
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
 {% endblock contenido %}
