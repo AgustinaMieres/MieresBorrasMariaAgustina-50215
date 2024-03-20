@@ -11,4 +11,5 @@ urlpatterns = [
 
     #___________________ Formularios
     path('libros_form/', librosForm, name="libros_form"),
+    path('libreria_form/', libreriaForm, name="libreria_form"),
 ]

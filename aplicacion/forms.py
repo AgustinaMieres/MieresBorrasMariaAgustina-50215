@@ -6,3 +6,7 @@ class LibrosForm(forms.Form):
     editorial=forms.CharField(max_length=100, required=True)
     genero=forms.CharField(max_length=100, required=True)
     precio=forms.IntegerField(required=True)
+
+class LibreriaForm (forms.Form):
+    articulo=forms.CharField(max_length=100, required=True)
+    precio=forms.IntegerField(required=True)

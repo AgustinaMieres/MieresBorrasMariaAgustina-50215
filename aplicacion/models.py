@@ -11,7 +11,7 @@ class Libro(models.Model):
     precio=models.IntegerField()
 
 class Libreria(models.Model):
-    ariticulo=models.CharField(max_length=100)
+    articulo=models.CharField(max_length=100)
     precio=models.IntegerField()
 
 class BestSeller(models.Model):

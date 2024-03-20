@@ -52,20 +52,18 @@ def librosForm(request):
 def libreriaForm(request):
     
     if request.method == "POST":
-        miForm = LibreriaForm(request.POST)
+        miForm= LibreriaForm(request.POST)
         if miForm.is_valid():
             libreria_articulo = miForm.cleaned_data.get("articulo")
             libreria_precio = miForm.cleaned_data.get("precio")
-            
             libreria = Libreria(articulo=libreria_articulo, precio=libreria_precio)
             libreria.save()
-
-            contexto = {'libreria': Libreria.objects.all()}
-            return render(request, "aplicacion/libreria.html", contexto) 
+            
+            contexto={'libreria':Libreria.objects.all()}
+            return render(request, "aplicacion/libreria.html", contexto)
 
     else:
-    
-        miForm = LibreriaForm()
+        miForm=LibreriaForm()
 
-    return render(request, "aplicacion/libreriaForm.html", {"form": miForm} )
+    return render (request,"aplicacion/libreriaForm.html", {"form": miForm} )
 
