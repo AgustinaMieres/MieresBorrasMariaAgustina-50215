@@ -2,7 +2,7 @@ El programa es la creación de una página de una librería online, llamada “L
 
 Instalación
 
-•	Abrir la terminal de una carpeta de la pc. En ella, clonar la página haciendo: git clone <link-del-repositorio>
+•	Abrir la terminal de una carpeta de la pc. En ella, clonar la página haciendo: git clone link-del-repositorio
 
 •	Una vez hecho, se va a descargar en la carpeta, por lo tanto, ir a esa carpeta y abrirlo con VSCode
 
