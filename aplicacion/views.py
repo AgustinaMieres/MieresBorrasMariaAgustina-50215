@@ -25,6 +25,7 @@ def sucursales(request):
     contexto={'sucursales':Sucursal.objects.all()}
     return render(request, "aplicacion/sucursales.html", contexto)
 
+#_______________________________________________________________________Forms
 
 def librosForm(request):
     
@@ -67,3 +68,45 @@ def libreriaForm(request):
 
     return render (request,"aplicacion/libreriaForm.html", {"form": miForm} )
 
+def bestSellerForm(request):
+    if request.method == "POST":
+        miForm = BestSellerForm(request.POST)
+        if miForm.is_valid():
+            bestSeller_nombre = miForm.cleaned_data.get("nombre")
+            bestSeller_autor = miForm.cleaned_data.get("autor")
+            bestSeller_editorial = miForm.cleaned_data.get("editorial")
+            bestSeller_genero = miForm.cleaned_data.get("genero")
+            bestSeller_precio = miForm.cleaned_data.get("precio")
+            bestSeller = BestSeller(nombre=bestSeller_nombre, autor=bestSeller_autor, editorial=bestSeller_editorial, genero=bestSeller_genero, precio=bestSeller_precio)
+            bestSeller.save()
+
+            contexto = {'bestSeller': BestSeller.objects.all()}
+            return render(request, "aplicacion/bestSeller.html", contexto) 
+
+    else:
+    
+        miForm = BestSellerForm()
+
+    return render(request, "aplicacion/bestSellerForm.html", {"form": miForm} )
+
+    
+def sucursalesForm(request):
+    if request.method == "POST":
+        miForm= SucursalForm(request.POST)
+        if miForm.is_valid():
+            sucursales_direccion = miForm.cleaned_data.get("direccion")
+            sucursales_contacto = miForm.cleaned_data.get("contacto")
+            sucursales = Sucursal(direccion=sucursales_direccion, contacto=sucursales_contacto)
+            sucursales.save()
+            
+            contexto={'sucursales':Sucursal.objects.all()}
+            return render(request, "aplicacion/sucursales.html", contexto)
+
+    else:
+        miForm=SucursalForm()
+
+    return render (request,"aplicacion/sucursalesForm.html", {"form": miForm} )
+
+    
+
+    
