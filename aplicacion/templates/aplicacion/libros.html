@@ -8,7 +8,21 @@
 {% block contenido %}
 <h2>Explora nuestros libros</h2>
 
-    
+<table>
+    <tr>
+        <td width="200"><h2>Libros</h2></td>
+        {% if user.is_authenticated %} 
+        <td>
+            <a
+            href="{% url 'libros_create' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>        
+    </tr>
+        {% endif %}
+</table>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -18,6 +32,7 @@
             <th>Editorial</th>
             <th>Genero</th>
             <th>Precio</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -29,7 +44,24 @@
             <td>{{ c.editorial }}</td>
             <td>{{ c.genero }}</td>
             <td>{{ c.precio }}</td>
+
+        {% if user.is_authenticated %} 
+            <td> 
+                <a
+                  href="{% url 'libros_update' c.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                href="{% url 'libros_delete' c.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+              </a>                
+            </td> 
         </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>

@@ -5,8 +5,27 @@
 <div class="masthead-heading text-uppercase">Sucursales</div>
 {% endblock titulo %}
 
+
 {% block contenido %}
 <h2>Conoce nuestras sucursales</h2>
+
+
+<table>
+    <tr>
+        <td width="200"><h2>Sucursales</h2></td>
+
+        {% if user.is_authenticated %} 
+        <td>
+            <a
+            href="{% url 'sucursales_create' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>      
+        
+        {% endif %}  
+    </tr>
+</table>
 
 <table class="table table-striped">
     <thead>
@@ -14,6 +33,7 @@
             <th>Id</th>
             <th>Direccion</th>
             <th>Contacto</th>
+            
             
         </tr>
     </thead>
@@ -23,6 +43,24 @@
             <td>{{ c.id }}</td>
             <td>{{ c.direccion }}</td>
             <td>{{ c.contacto}}</td>
+
+            {% if user.is_authenticated %} 
+            <td> 
+                <a
+                  href="{% url 'sucursales_update' c.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                href="{% url 'sucursales_delete' c.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+              </a>                               
+            </td> 
+            
+            {% endif %} 
             
         </tr>
     {% endfor %}
