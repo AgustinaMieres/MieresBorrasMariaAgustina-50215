@@ -1,6 +1,6 @@
-# PROYECTO FINAL - LIBRERÍA ONLINE
+PROYECTO FINAL - LIBRERÍA ONLINE
 
-![Librería]
+
 
 Comisión: 50215  
 Autor: Maria Agustina Mieres Borras  
@@ -9,11 +9,11 @@ Versión: 1.0
 
 ---
 
-## Descripción del Proyecto
+Descripción del Proyecto
 
 Este proyecto consiste en una página web de una librería online. Los usuarios pueden navegar por distintos modelos de libros y artículos de librería, así como acceder a información sobre las sucursales de la librería.
 
-### Funcionalidades:
+Funcionalidades:
 
 - **Libros**: Listado de libros disponibles en la librería, incluyendo autor, nombre del libro, editorial y precio.
   
@@ -23,7 +23,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 - **Sucursales**: Información sobre las sucursales de la librería, incluyendo dirección y contacto.
 
-### Usuarios:
+Usuarios:
 
 - **Clientes**: Pueden navegar por los productos disponibles.
   
@@ -31,12 +31,12 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 ---
 
-## Pruebas Realizadas
+Pruebas Realizadas
 
 Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](link-to-tests).
 
 ---
 
-## Video Demostración
+Video Demostración
 
-Para una demostración visual del proyecto, puedes ver el siguiente video: [Demostración del Proyecto](https://youtu.be/UvojbBhI0Yg).
+Para una demostración visual del proyecto, podes ver el siguiente video: https://youtu.be/UvojbBhI0Yg
