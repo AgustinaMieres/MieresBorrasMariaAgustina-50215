@@ -29,7 +29,7 @@ urlpatterns = [
     path('sucursales/', sucursales, name="sucursales"),
     path('sucursales_create/', sucursalesCreate, name="sucursales_create"),
     path('sucursales_update/<id_sucursales>/', sucursalesUpdate, name="sucursales_update"),
-    path('sucursaleslibros_delete/<id_sucursaales>/', sucursalesDelete, name="sucursales_delete"),
+    path('sucursaleslibros_delete/<id_sucursales>/', sucursalesDelete, name="sucursales_delete"),
 
    
     #_______________________Buscar
