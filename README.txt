@@ -1,40 +1,42 @@
-PROYECTO FINAL CODERHOUSE PYTHON
+# PROYECTO FINAL - LIBRERÍA ONLINE
 
-Comisión: 50215
-Autor: Maria Agustina Mieres Borras
-Fecha: 29/08/2024
-Version:1.0
+![Librería]
 
+Comisión: 50215  
+Autor: Maria Agustina Mieres Borras  
+Fecha: 29/08/2024  
+Versión: 1.0  
 
+---
 
-DESCRIPCION DEL PROYECTO
+## Descripción del Proyecto
 
-Es una pagina web de una libreria, en la cual si sos cliente vas a poder navegar
+Este proyecto consiste en una página web de una librería online. Los usuarios pueden navegar por distintos modelos de libros y artículos de librería, así como acceder a información sobre las sucursales de la librería.
 
-por los distintos modelos:
+### Funcionalidades:
 
----> "libros": acá encontraras el listado de libros que vende la librería.
-                Autor, nombre del libro, editorial, precio
+- **Libros**: Listado de libros disponibles en la librería, incluyendo autor, nombre del libro, editorial y precio.
+  
+- **Artículos de Librería**: Listado de artículos de librería, con detalles de los productos y precios.
 
----> "librerías": acá encontraras el listado de artículos de librería que vende la librería.
-                 Articulos y precios
+- **Best Sellers**: Listado de los libros más vendidos, mostrando autor, nombre del libro, editorial y precio.
 
----> "Best Sellers": acá veras los libros más vendidos de la librera.
-                    Autor, nombre del libro, editorial, precio
+- **Sucursales**: Información sobre las sucursales de la librería, incluyendo dirección y contacto.
 
----> "Sucursales": donde podrás encontrar el listado de locales que hay alrededor del mundo.
-                    Direccion y contacto
+### Usuarios:
 
-Si sos empleado te vas a poder registrar con tu numero de id y de esta manera ya seras 
+- **Clientes**: Pueden navegar por los productos disponibles.
+  
+- **Empleados**: Se pueden registrar con su número de identificación, lo que les permite editar la información del sitio, agregar o eliminar datos. También pueden realizar acciones como iniciar sesión, cerrar sesión, cambiar contraseña, editar perfil y seleccionar un avatar.
 
-un usuario capaz de editar libremente actualizando, agregando o eliminando datos.
+---
 
-Tambien vas a poder loguearte, desloguearte, cambiar contraseña, editar perfil y seleccionar un avatar
+## Pruebas Realizadas
 
+Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](link-to-tests).
 
-PRUEBAS REALIZADAS
-En el archivo llamado "Pruebas Proyecto.xlsx" podras ver las pruebas realizadas
+---
 
-VIDEO DEMOSTRACION
-https://youtu.be/UvojbBhI0Yg
+## Video Demostración
 
+Para una demostración visual del proyecto, puedes ver el siguiente video: [Demostración del Proyecto](https://youtu.be/UvojbBhI0Yg).
