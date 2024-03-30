@@ -35,5 +35,5 @@ Tambien vas a poder loguearte, desloguearte, cambiar contraseña, editar perfil 
 PRUEBAS REALIZADAS
 En el archivo llamado "" podras ver las pruebas realizadas
 
-VIDEO DESMOTRACION
+VIDEO DEMOSTRACION
 
