@@ -33,7 +33,7 @@ Tambien vas a poder loguearte, desloguearte, cambiar contraseña, editar perfil 
 
 
 PRUEBAS REALIZADAS
-En el archivo llamado "" podras ver las pruebas realizadas
+En el archivo llamado "Pruebas Proyecto.xlsx" podras ver las pruebas realizadas
 
 VIDEO DEMOSTRACION
-
+https://youtu.be/UvojbBhI0Yg
