@@ -6,14 +6,18 @@ from .forms import *
 
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import PasswordChangeView
 
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def home(request):
     return render(request, "aplicacion/index.html") 
+
+def acerca(request):
+    return render(request, "aplicacion/acerca.html") 
 
 
 #_______________________________________________________________________Forms
@@ -23,6 +27,8 @@ def home(request):
 def libros(request):
     contexto={'libros':Libro.objects.all().order_by("id")}
     return render(request, "aplicacion/libros.html", contexto)
+
+
 
 
 @login_required
@@ -245,13 +251,9 @@ def sucursalesDelete(request, id_sucursales):
 
 #________________________ Buscar
 
-@login_required
-def buscarLibros(request):
-    return render(request, "aplicacion/buscar.html")
 
-@login_required
-def encontrarLibros(request):
-    return render(request, "aplicacion/buscar.html")
+
+
 
 #______________________________________________________________Login
 
@@ -262,6 +264,18 @@ def login_request(request):
         user = authenticate(request, username=usuario, password=clave)
         if user is not None:
             login(request, user)
+
+            #______ Avatar
+            try:
+                avatar = Avatar.objects.get(user=request.user.id).imagen.url
+            except:
+                avatar = "/media/avatares/default.png"
+            finally:
+                request.session["avatar"] = avatar
+
+            #________________________________________________________
+
+
             return render(request, "aplicacion/index.html")
         else:
             return redirect(reverse_lazy('login'))
@@ -287,3 +301,61 @@ def registrar(request):
         miForm = RegistroForm()
 
     return render(request, "aplicacion/registro.html", {"form": miForm} ) 
+
+
+#________________________ Edición de Perfil
+
+@login_required
+def editProfile(request):
+    usuario = request.user
+    if request.method == "POST":
+        miForm = UserEditForm(request.POST)
+        if miForm.is_valid():
+            user = User.objects.get(username=usuario)
+            user.email = miForm.cleaned_data.get("email")
+            user.first_name = miForm.cleaned_data.get("first_name")
+            user.last_name = miForm.cleaned_data.get("last_name")
+            user.save()
+            return redirect(reverse_lazy('home'))
+    else:
+    
+        miForm = UserEditForm(instance=usuario)
+
+    return render(request, "aplicacion/editarPerfil.html", {"form": miForm} )   
+
+
+#____________________________Cambio clave
+
+class CambiarClave(LoginRequiredMixin, PasswordChangeView):
+    template_name = "aplicacion/cambiar_clave.html"
+    success_url = reverse_lazy("home")
+
+
+#_________________________________Agregar avatar
+    
+@login_required
+def agregarAvatar(request):
+    if request.method == "POST":
+        miForm = AvatarForm(request.POST, request.FILES)
+
+        if miForm.is_valid():
+            usuario = User.objects.get(username=request.user)
+
+            #___ Para borrar el avatar viejo:
+            avatarViejo = Avatar.objects.filter(user=usuario)
+            if len(avatarViejo) > 0:
+                for i in range(len(avatarViejo)):
+                    avatarViejo[i].delete()
+
+            #____________________________________________________
+            avatar = Avatar(user=usuario, imagen=miForm.cleaned_data["imagen"])
+            avatar.save()
+            imagen = Avatar.objects.get(user=usuario).imagen.url
+            request.session["avatar"] = imagen
+            
+            return redirect(reverse_lazy('home'))
+    else:
+    
+        miForm = AvatarForm()
+
+    return render(request, "aplicacion/agregarAvatar.html", {"form": miForm} )      

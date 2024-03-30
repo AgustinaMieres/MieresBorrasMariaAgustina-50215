@@ -5,11 +5,8 @@ from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', home, name="home"),
-    
-   
+    path('acerca/', acerca, name="acerca_de_mi"),
 
-    
-      #___________________ Libros
     path('libros/', libros, name="libros"),
     path('libros_create/', librosCreate, name="libros_create"),
     path('libros_update/<id_libros>/', librosUpdate, name="libros_update"),
@@ -33,17 +30,24 @@ urlpatterns = [
     path('sucursales_update/<id_sucursales>/', sucursalesUpdate, name="sucursales_update"),
     path('sucursaleslibros_delete/<id_sucursaales>/', sucursalesDelete, name="sucursales_delete"),
 
-    #_____________________ Buscar
+   
+    
 
-    path('buscar_libros/', buscarLibros, name="buscar_libros"),
-    path('encontrar_libros/', encontrarLibros, name="encontrar_libros"),
 
     #____________________ Login, Logout, Registration
     path('login/', login_request, name="login"),
     path('logout/', LogoutView.as_view(template_name="aplicacion/logout.html") , name="logout"),
     path('registrar/', registrar, name="registrar"),
     
+    #_____________________Edicion perfil
+    path('perfil/', editProfile, name="perfil"),
 
+
+    #_____________________Cambio clave
+    path('<int:pk>/password/', CambiarClave.as_view(), name="cambiar_clave"),
+
+    #___________________________Avatar
+    path('agregar_avatar/', agregarAvatar, name="agregar_avatar"),
 
 
 ]

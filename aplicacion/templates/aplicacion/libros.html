@@ -5,6 +5,8 @@
 <div class="masthead-heading text-uppercase">Libros</div>
 {% endblock titulo %}
 
+
+
 {% block contenido %}
 <h2>Explora nuestros libros</h2>
 
@@ -13,59 +15,62 @@
         <td width="200"><h2>Libros</h2></td>
         {% if user.is_authenticated %} 
         <td>
-            <a
-            href="{% url 'libros_create' %}"
-            class="btn btn-primary btn-sm"
-            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            <a href="{% url 'libros_create' %}" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-plus" title="Crear"></i>
             </a>
         </td>        
     </tr>
         {% endif %}
 </table>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Autor</th>
-            <th>Editorial</th>
-            <th>Genero</th>
-            <th>Precio</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-    {% for c in libros  %}
-        <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.nombre }}</td>
-            <td>{{ c.autor}}</td>
-            <td>{{ c.editorial }}</td>
-            <td>{{ c.genero }}</td>
-            <td>{{ c.precio }}</td>
-
-        {% if user.is_authenticated %} 
-            <td> 
-                <a
-                  href="{% url 'libros_update' c.id %}"
-                  class="btn btn-primary"
-                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
-                </a>
-                <a
-                href="{% url 'libros_delete' c.id %}"
-                class="btn btn-danger"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
-              </a>                
-            </td> 
-        </tr>
-        {% endif %}
-    {% endfor %}
-    </tbody>
-</table>
-
+{% if form %}
+    <form method="post">
+        <table>
+            {% csrf_token %}
+            {{ form.as_table }}
+            <tr>
+                <td><input type="submit" class="btn btn-success" value="Editar"></td>
+            </tr>
+        </table>
+    </form>
+{% else %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Editorial</th>
+                <th>Genero</th>
+                <th>Precio</th>
+                {% if user.is_authenticated %} 
+                    <th>Acciones</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for c in libros  %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.autor }}</td>
+                <td>{{ c.editorial }}</td>
+                <td>{{ c.genero }}</td>
+                <td>{{ c.precio }}</td>
+                {% if user.is_authenticated %} 
+                    <td> 
+                        <a href="{% url 'libros_update' c.id %}" class="btn btn-primary">
+                            <i class="fa-regular fa-pen-to-square" title="Edit Record"></i>
+                        </a>
+                        <a href="{% url 'libros_delete' c.id %}" class="btn btn-danger">
+                            <i class="fa-solid fa-delete-left" title="Delete Record"></i>
+                        </a>
+                    </td> 
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
 
 {% endblock contenido %}
-

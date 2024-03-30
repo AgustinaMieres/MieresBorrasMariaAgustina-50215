@@ -16,21 +16,32 @@
             <a
             href="{% url 'libreria_create' %}"
             class="btn btn-primary btn-sm"
-            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            ><i class="fa-solid fa-plus" title="Crear"> </i>
             </a>
         </td>  
         {% endif %}      
     </tr>
 </table>
 
+{% if form %}
+<table>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <tr>
+            <td colspan="4">
+                <button type="submit" class="btn btn-success">Editar</button>
+            </td>
+        </tr>
+    </form>
+</table>
+{% else %}
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Id</th> 
             <th>Articulo</th>
             <th>Precio</th>
-            
-            
         </tr>
     </thead>
     <tbody>
@@ -46,21 +57,22 @@
                   href="{% url 'libreria_update' c.id %}"
                   class="btn btn-primary"
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                  ><i class="fa-regular fa-pen-to-square" title="Edit Record"></i>
                 </a>
                 <a
                 href="{% url 'libreria_delete' c.id %}"
                 class="btn btn-danger"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                ><i class="fa-solid fa-delete-left" title="Delete Record"></i>
               </a>               
-                              
             </td> 
             {% endif %}
         </tr>
     {% endfor %}
     </tbody>
 </table>
-
+{% endif %}
 
 {% endblock contenido %}
+
+
