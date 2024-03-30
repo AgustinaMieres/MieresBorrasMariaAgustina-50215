@@ -249,7 +249,70 @@ def sucursalesDelete(request, id_sucursales):
 
     
 
-#________________________ Buscar
+#________________________ Buscar libros
+
+def buscarLibros(request):
+    return render(request, "aplicacion/buscar.html")
+
+def encontrarLibros(request):
+    if request.GET["buscar"]:
+        patron = request.GET["buscar"]
+        libros = Libro.objects.filter(nombre__icontains=patron)
+        contexto = {"libros": libros}
+        return render(request, "aplicacion/libros.html", contexto)
+    
+
+    contexto = {'libros': Libro.objects.all()}
+    return render(request, "aplicacion/libros.html", contexto) 
+
+#________________________ Buscar libreria
+
+def buscarLibreria(request):
+    return render(request, "aplicacion/buscarArticulo.html")
+
+def encontrarLibreria(request):
+    if request.GET["buscar"]:
+        patron = request.GET["buscar"]
+        libreria = Libreria.objects.filter(articulo__icontains=patron)
+        contexto = {"libreria": libreria}
+        return render(request, "aplicacion/libreria.html", contexto)
+    
+
+    contexto = {'libreria': Libreria.objects.all()}
+    return render(request, "aplicacion/libreria.html", contexto) 
+
+#________________________ Buscar Best Seller
+
+def buscarbestSeller(request):
+    return render(request, "aplicacion/buscarBestSeller.html")
+
+def encontrarbestSeller(request):
+    if request.GET["buscar"]:
+        patron = request.GET["buscar"]
+        bestSeller = BestSeller.objects.filter(nombre__icontains=patron)
+        contexto = {"bestSeller": bestSeller}
+        return render(request, "aplicacion/bestSeller.html", contexto)
+    
+
+    contexto = {'bestSeller': BestSeller.objects.all()}
+    return render(request, "aplicacion/bestSeller.html", contexto) 
+
+#________________________ Buscar Sucursal
+
+def buscarSucursal(request):
+    return render(request, "aplicacion/buscarSucursal.html")
+
+def encontrarSucursal(request):
+    if request.GET["buscar"]:
+        patron = request.GET["buscar"]
+        sucursal = Sucursal.objects.filter(direccion__icontains=patron)
+        contexto = {"sucursal": sucursal}
+        return render(request, "aplicacion/sucursales.html", contexto)
+    
+
+    contexto = {'sucursal': Sucursal.objects.all()}
+    return render(request, "aplicacion/sucursales.html", contexto) 
+
 
 
 

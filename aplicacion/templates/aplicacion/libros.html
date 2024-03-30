@@ -6,7 +6,6 @@
 {% endblock titulo %}
 
 
-
 {% block contenido %}
 <h2>Explora nuestros libros</h2>
 
@@ -19,6 +18,13 @@
                 <i class="fa-solid fa-plus" title="Crear"></i>
             </a>
         </td>        
+
+        <td>
+            <a href="{% url 'buscar_libros' %}" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-magnifying-glass" title="Buscar libros"></i>
+                
+            </a>
+        </td>   
     </tr>
         {% endif %}
 </table>

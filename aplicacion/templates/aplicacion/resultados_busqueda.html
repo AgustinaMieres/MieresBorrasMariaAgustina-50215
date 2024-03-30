@@ -1,26 +1,8 @@
-{% extends "aplicacion/index.html" %}
-
-{% block titulo %}
-<div class="masthead-heading text-center text-uppercase">Resultados de la búsqueda</div>
-{% endblock titulo %}
-
-{% block contenido %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-            {% if query %}
-            <h2>Resultados para "{{ query }}"</h2>
-            {% else %}
-            <h2>Resultados de la búsqueda</h2>
-            {% endif %}
-            <ul>
-                {% for libro in libros %}
-                <li>{{ libro.nombre }}</li>
-                {% empty %}
-                <li>No se encontraron libros.</li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
-{% endblock contenido %}
+<h2>Resultados para "{{ query }}"</h2>
+<ul>
+{% for resultado in resultados %}
+    <li>{{ resultado.tu_campo }}</li>
+{% empty %}
+    <li>No se encontraron resultados.</li>
+{% endfor %}
+</ul>

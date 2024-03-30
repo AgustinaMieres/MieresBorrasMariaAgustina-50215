@@ -49,3 +49,8 @@ class UserEditForm(UserChangeForm):
 
 class AvatarForm(forms.Form):
     imagen = forms.ImageField(required=True)
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField(label='Buscar')
+

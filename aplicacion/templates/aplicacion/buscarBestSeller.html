@@ -2,13 +2,13 @@
 
 
 {% block titulo %}
-<div class="masthead-subheading">Buscar libros</div>
+<div class="masthead-subheading">Buscar Best Seller </div>
 {% endblock titulo %}
 
 
 {% block contenido %}
 
-<form action="{% url 'encontrar_libros' %}" method="get">
+<form action="{% url 'encontrar_bestSeller' %}" method="get">
     {% csrf_token %}
     <p>Buscar por nombre de libro: <input type="text" name="buscar" id="buscar"></p>
     <input type="submit" value="Buscar">
