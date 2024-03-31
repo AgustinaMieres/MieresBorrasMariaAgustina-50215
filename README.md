@@ -25,7 +25,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 - **Sucursales:** Información sobre las sucursales de la librería, incluyendo dirección y contacto.
 
-### Usuarios:
+### Usuarios 👤
 
 - **Clientes:** Pueden navegar por los productos disponibles.
   
@@ -33,7 +33,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 ---
 
-## Pruebas Realizadas
+## Pruebas Realizadas ✔️
 
 Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](https://github.com/AgustinaMieres/MieresBorrasMariaAgustina-50215/blob/master/Pruebas%20Proyecto.xlsx).
 
