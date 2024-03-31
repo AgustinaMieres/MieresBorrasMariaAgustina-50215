@@ -1,4 +1,4 @@
-# Proyecto Final - Librería Online
+# Proyecto Final - Librería Online :books:
 
 
 
@@ -11,7 +11,7 @@
 
 ---
 
-## Descripción del Proyecto
+## Descripción del Proyecto :books:
 
 Este proyecto consiste en una página web de una librería online. Los usuarios pueden navegar por distintos modelos de libros y artículos de librería, así como acceder a información sobre las sucursales de la librería.
 
@@ -35,7 +35,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 ## Pruebas Realizadas
 
-Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](https://github.com/AgustinaMieres/MieresBorrasMariaAgustina-50215/blob/master/aplicacion/Pruebas%20Proyecto.xlsx).
+Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](https://github.com/AgustinaMieres/MieresBorrasMariaAgustina-50215/blob/master/Pruebas%20Proyecto.xlsx).
 
 ---
 
