@@ -25,7 +25,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 - **Sucursales:** Información sobre las sucursales de la librería, incluyendo dirección y contacto.
 
-### Usuarios 👤
+### Usuarios 🧑
 
 - **Clientes:** Pueden navegar por los productos disponibles.
   
