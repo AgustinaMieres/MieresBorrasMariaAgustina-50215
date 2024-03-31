@@ -35,7 +35,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 ## Pruebas Realizadas
 
-Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](Pruebas Proyecto.xlsx).
+Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](https://github.com/AgustinaMieres/MieresBorrasMariaAgustina-50215/blob/master/aplicacion/Pruebas%20Proyecto.xlsx).
 
 ---
 
