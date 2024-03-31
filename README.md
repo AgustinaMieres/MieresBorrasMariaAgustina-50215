@@ -1,6 +1,6 @@
 # Proyecto Final - Librería Online
 
-![Librería](https://example.com/imagen-libreria.jpg)
+
 
 ## Información del Proyecto
 
@@ -35,7 +35,7 @@ Este proyecto consiste en una página web de una librería online. Los usuarios 
 
 ## Pruebas Realizadas
 
-Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](link-to-tests).
+Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del proyecto. Puedes encontrar más detalles en el archivo [Pruebas Proyecto.xlsx](Pruebas Proyecto.xlsx).
 
 ---
 
