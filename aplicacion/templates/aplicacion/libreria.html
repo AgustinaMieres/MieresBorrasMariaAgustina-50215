@@ -50,22 +50,22 @@
         </tr>
     </thead>
     <tbody>
-    {% for c in libreria  %}
+    {% for l in libreria  %}
         <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.articulo }}</td>
-            <td>{{ c.precio}}</td>
+            <td>{{ l.id }}</td>
+            <td>{{ l.articulo }}</td>
+            <td>{{ l.precio}}</td>
 
             {% if user.is_authenticated %} 
             <td> 
                 <a
-                  href="{% url 'libreria_update' c.id %}"
+                  href="{% url 'libreria_update' l.id %}"
                   class="btn btn-primary"
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                   ><i class="fa-regular fa-pen-to-square" title="Edit Record"></i>
                 </a>
                 <a
-                href="{% url 'libreria_delete' c.id %}"
+                href="{% url 'libreria_delete' l.id %}"
                 class="btn btn-danger"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                 ><i class="fa-solid fa-delete-left" title="Delete Record"></i>

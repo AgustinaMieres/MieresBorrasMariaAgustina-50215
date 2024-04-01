@@ -21,6 +21,7 @@
             class="btn btn-primary btn-sm"
             ><i class="fa-solid fa-plus" title="Crear"> </i>
             </a>
+
             <a href="{% url 'buscar_sucursal' %}" class="btn btn-primary btn-sm">
                 <i class="fa-solid fa-magnifying-glass" title="Buscar libros"></i>
                 
@@ -53,22 +54,22 @@
         </tr>
     </thead>
     <tbody>
-    {% for c in sucursales  %}
+    {% for s in sucursales  %}
         <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.direccion }}</td>
-            <td>{{ c.contacto}}</td>
+            <td>{{ s.id }}</td>
+            <td>{{ s.direccion }}</td>
+            <td>{{ s.contacto}}</td>
 
             {% if user.is_authenticated %} 
             <td> 
                 <a
-                  href="{% url 'sucursales_update' c.id %}"
+                  href="{% url 'sucursales_update' s.id %}"
                   class="btn btn-primary"
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                   ><i class="fa-regular fa-pen-to-square" title="Edit Record"></i>
                 </a>
                 <a
-                href="{% url 'sucursales_delete' c.id %}"
+                href="{% url 'sucursales_delete' s.id %}"
                 class="btn btn-danger"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                 ><i class="fa-solid fa-delete-left" title="Delete Record"></i>

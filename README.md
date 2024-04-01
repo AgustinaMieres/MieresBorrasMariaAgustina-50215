@@ -39,8 +39,8 @@ Se han realizado diversas pruebas para garantizar el funcionamiento adecuado del
 
 ### Superuser
 
-usuario: PythonCoder
-contraseña: coderhouse1234
+Usuario: PythonCoder
+Contraseña: coderhouse1234
 
 
 
